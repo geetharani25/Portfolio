@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="navbar">
+    <div class="logo">
+      <img src="geetha.png" alt="Logo">
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" >Home</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Skills</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Contact Me</a></li>
+    </ul>
+  </div>
+  <img class="center-image" src="a.png" alt="img">
+  <div class="social-icons">
+    <a href="https://www.linkedin.com/in/pinninti-geetha-rani-0a2641242" target="_blank">
+      <i class="fab fa-linkedin"></i>
+    </a>
+    <a href="https://github.com/geetharani25" target="_blank">
+      <i class="fab fa-github"></i>
+    </a>
+    <a href="mailto:geetharani1025@gmail.com">
+      <i class="fas fa-envelope"></i>
+    </a>
+  </div>
+  <div class="about-section" id="about">
+    <p class="about-text">Hey! <br>I am Geetha Rani Pinninti from Andhra Pradesh!</p>
+    <p>I am a Computer Science student at Anil Neerukonda Institute of Technology and Sciences. I love programming and I'm very passionate about learning new things!</p>
+    <button id="downloadButton">My Resume</button>
+</div>
+  
+  <div class="skills-section" id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <ul>Programming Languages:
+      <li>C</li>
+      <li>C++</li>
+      <li>Java</li>
+      <li>Python</li>
+      </ul>
+      <ul>Web Technologies:
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>Javascript</li>
+      <li>PHP</li>
+      <li>MySQL</li>
+      </ul>
+      <ul>CS Core:
+        <li>Data Structures and Algorithms</li>
+        <li>OOPs</li>
+        <li>Networking</li>
+        <li>Operating Systems</li>
+        </ul>
+    </ul>
+  </div>
+  <h2 style="margin-bottom: -80px;margin-top: 80px;color: whitesmoke;">My Projects</h2>
+  <div class="projects-container">
+    
+    <div class="projects-section" id="projects">
+      <img src="tr.png" alt="Treasure Hunt">
+      <h1>Treasure Hunt Puzzle</h1>
+      <p>A fun puzzle game where you search for hidden treasures!</p>
+      <div class="project-links">
+        <a href="https://treasurehuntpuzzle.000webhostapp.com/index.html" target="_blank">
+          <button>View Live</button>
+        </a>
+        <a href="https://github.com/geetharani25/TreasureHuntPuzzle" target="_blank">
+          <button>Source Code</button>
+        </a>
+      </div>
+    </div>
+  
+    <div class="projects-section">
+      <img src="stweb.png" alt="Static Website">
+      <h1>A Static Website</h1>
+      <p>A website which includes details about a college, a number guessing game, etc!</p>
+      <div class="project-links">
+        <a href="https://geethawebsite.netlify.app/" target="_blank">
+          <button>View Live</button>
+        </a>
+        <a href="https://github.com/geetharani25/WT_Lab/tree/main/Experiment%201(Static%20Website)" target="_blank">
+          <button>Source Code</button>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="contactme-section" id="contact">
+    <h1>Drop a Message</h1>
+    <img class="contact-img" src="contact.jpg" alt="Contact Me">
+    <p>If you'd like to get in touch, feel free to reach out through any of the following channels.</p>
+    <p> I'm always open to new opportunities and collaborations!</p>
+    <br><div class="social-icons">
+      <a href="https://www.linkedin.com/in/pinninti-geetha-rani-0a2641242" target="_blank">
+        <i class="fab fa-linkedin"></i>
+      </a>
+      <a href="https://github.com/geetharani25" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="mailto:geetharani1025@gmail.com">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+  <footer><br><br><br>
+    <p style="color:white; align:center;">@geetharani</p>
+  </footer>
+  <!-- Add a script to handle smooth scrolling -->
+  <script>
+    document.getElementById("downloadButton").addEventListener("click", function() {
+        var link = document.createElement('a');
+        link.href = 'geetha.pdf';  // Replace with the actual path to your resume PDF
+        link.download = 'geetha.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    });
+    
+    // Function to smoothly scroll to a section
+    function scrollToSection(sectionId) {
+      document.getElementById(sectionId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+
+    // Attach click event to "About Me" link to scroll to the about-section
+    const aboutMeLink = document.querySelector('.nav-links li:nth-child(2) a');
+    aboutMeLink.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default link behavior
+      scrollToSection('about'); // Scroll to the 'about-section'
+    });
+    //Attach click event to "Skills" link to scroll to the skills-section
+      const skillsLink = document.querySelector('.nav-links li:nth-child(3) a');
+  skillsLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    scrollToSection('skills'); // Scroll to the 'skills-section'
+  });
+
+//Attach click event to "Skills" link to scroll to the skills-section
+const projectsLink = document.querySelector('.nav-links li:nth-child(4) a');
+  projectsLink.addEventListener('click', function(event) {
+    event.preventDefault();
+    scrollToSection('projects'); // Scroll to the 'skills-section'
+  });
+
+    const contactMeLink = document.querySelector('.nav-links li:nth-child(5) a');
+contactMeLink.addEventListener('click', function(event) {
+  event.preventDefault(); // Prevent default link behavior
+  scrollToSection('contact'); // Scroll to the 'contactme-section'
+});
+
+  </script>
+</body>
+</html>
